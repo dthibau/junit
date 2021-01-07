@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:insert="fragments :: header"></div>
+
+<div th:insert="fragments :: navbar"></div>
+
+<div class="container py-5">
+	<div class="row">
+		<div class="col">
+			<div class="jumbotron">
+				<h1 class="display-4">Gestion des fournisseurs</h1>
+				<p class="lead">Fournisseurs agréés.</p>
+				<hr class="my-4">
+				<p>Tout fournisseur doit être préalablement déclaré afin de
+					pouvoir importer ses produits dans le stock.</p>
+				<a class="btn btn-primary btn-lg" href="/fournisseurs" role="button">Accès
+					à la liste des forunisseurs</a>
+			</div>
+		</div>
+		<div class="col">
+			<div class="jumbotron">
+				<h1 class="display-4">Gestion des produits</h1>
+				<p class="lead">Produits présents dans le catalogue.</p>
+				<hr class="my-4">
+				<p>Permet de rechercher un produit, l'éditer et visuliser sa
+					disponibilité.</p>
+				<a class="btn btn-primary btn-lg" href="/produits" role="button">Accès
+					à la liste des produits</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div th:insert="fragments :: footer"></div>

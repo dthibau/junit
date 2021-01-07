@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:insert="fragments :: header"></div>
+
+<div th:insert="fragments :: navbar"></div>
+
+<div class="container py-5">
+	<div class="row">
+		<h3>Liste des produits</h3>
+	</div>
+	<div class="row justify-content-end">
+		<form th:action="@{/produits/}" id="searchForm" method="POST">
+			<div class="form-check form-check-inline">
+				<label for="exampleFormControlSelect1">Sélectionner un
+					fournisseur :</label> <select class="form-control" id="fournisseurId" name="fournisseurId"  onchange="document.getElementById('searchForm').submit()">
+					<option value="">Tous les fournisseurs </option>
+					<option th:each="f : ${fournisseurs}" th:value="${f.id}"
+						th:text="${f.nom}" th:selected="${selectedFournisseur==f.id}"></option>
+				</select>
+			</div>
+		</form>
+	</div>
+	<div class="row">
+		<table class="table">
+			<tr>
+				<th>Référence</th>
+				<th>Nom</th>
+				<th>Fournisseur</th>
+				<th>Prix unitaire</th>
+				<th>Dimension</th>
+
+				<th></th>
+			</tr>
+			<tr th:each="p : ${produits}">
+				<td th:text="${p.reference}">Réf</td>
+				<td th:text="${p.nom}">23.32</td>
+				<td th:text="${p.fournisseur.nom}">Nom</td>
+				<td th:text="${p.prixUnitaire}">23.32</td>
+				<td th:text="${p.dimension}">23.32</td>
+				<td><a href="fournisseurDetails.html"
+					th:href="@{/produits/edit(produitId=${p.id})}">Editer</a></td>
+			</tr>
+		</table>
+	</div>
+</div>

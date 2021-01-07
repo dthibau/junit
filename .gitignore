@@ -1,0 +1,7 @@
+.metadata/
+*.odp
+*.odt
+*#
+**/bin/
+**/target/
+MyWork/

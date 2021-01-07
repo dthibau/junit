@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:insert="fragments :: header"></div>
+
+<div th:insert="fragments :: navbar"></div>
+
+<div class="container py-5">
+	<div class="row">
+		<h3 th:text="${produit.nom}">Produit </h3>
+	</div>
+	<div class="row">
+	<div class="col-sm">
+	</div>
+	<div class="col-sm">
+		<form th:action="@{/produits/save}" th:object="${produit}"
+			method="post">
+			<div class="form-group">
+				<label for="referenceInput">Référence</label> <input type="text"
+					class="form-control" id="referenceInput"
+					aria-describedby="referenceHelp" readonly th:field="*{reference}"> <small
+					id="referenceHelp" class="form-text text-muted">La
+					référence ne peut pas être modifiée.</small>
+			</div>
+			<div class="form-group">
+				<label for="nomInput">Nom</label> <input type="text"
+					class="form-control" id="nomInput" aria-describedby="nomHelp" th:field="*{nom}">
+				<small id="referenceHelp" class="form-text text-muted">Limité
+					à 255 caractères.</small>
+			</div>
+			<div class="form-group">
+				<label for="descriptionInput">Description</label> <textarea type="text"
+					class="form-control" id="descriptionInput" aria-describedby="descriptionHelp" th:field="*{description}"></textarea>
+				<small id="descriptionHelp" class="form-text text-muted"></small>
+			</div>
+			<div class="form-group">
+				<label for="largeurInput">Largeur</label> <input type="text"
+					class="form-control" id="largeurInput" aria-describedby="largeurHelp" th:field="*{dimension.largeur}">
+				<small id="largeurHelp" class="form-text text-muted"></small>
+			</div>
+			<div class="form-group">
+				<label for="longueurInput">Longueur</label> <input type="text"
+					class="form-control" id="longueurInput" aria-describedby="longueurHelp" th:field="*{dimension.longueur}">
+				<small id="longueurHelp" class="form-text text-muted"></small>
+			</div>
+			<div class="form-group">
+				<label for="hauteurInput">Hauteur</label> <input type="text"
+					class="form-control" id="hauteurInput" aria-describedby="hauteurHelp" th:field="*{dimension.hauteur}">
+				<small id="hauteurHelp" class="form-text text-muted"></small>
+			</div>
+			<div class="form-group">
+				<label for="nomInput">Prix unitaire</label> <input type="text"
+					class="form-control" id="puInput" aria-describedby="puHelp" th:field="*{prixUnitaire}">
+				<small id="puHelp" class="form-text text-muted">Exprimé en euros</small>
+			</div>
+<input type="hidden" id="idInput" th:field="*{id}">
+			<div>
+				<input class="btn btn-primary"  type="submit" value="Enregistrer" />
+			</div>
+		</form>
+		</div>
+		<div class="col-sm"></div>
+	</div>
+</div>

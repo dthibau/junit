@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    show-sql: true
+    
+appli:
+  secretKey: secret
+  validity: 1000
+  rememberMe: 1000
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
