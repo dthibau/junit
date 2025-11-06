@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    show-sql: true
+    
+appli:
+  secretKey: V7j5h2XQvVxkRf6b9R2pN8xA2u7kHq9FzP4sM3cW8tL5dJ0qB1uD9rS6wT8yE1z9Kc4vM7hF2pR8tN6qU3sJ5wR7nB9vH4fL8
+  validity: 1000
+  rememberMe: 1000
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
