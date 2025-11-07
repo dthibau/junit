@@ -1,6 +1,4 @@
 .metadata/
-*.odp
-*.odt
 *#
 **/bin/
 **/target/
